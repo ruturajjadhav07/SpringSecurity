@@ -24,6 +24,9 @@ public class UserService {
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
+    @Autowired
+    private JWTService jwtService;
+
     public List<Users> getUsers() {
         return userRepository.findAll();
     }
@@ -36,10 +39,10 @@ public class UserService {
             throw new IllegalArgumentException("Please enter a password");
         }
 
-        // Check if user already exists
-        if (userRepository.findByUsername(username) != null) {
-            throw new IllegalArgumentException("Username already taken");
-        }
+        // // Check if user already exists
+        // if (userRepository.findByUsername(username) != null) {
+        // throw new IllegalArgumentException("Username already taken");
+        // }
 
         Users user = new Users();
         user.setUsername(username);
@@ -52,7 +55,8 @@ public class UserService {
                 .authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
 
         if (authentication.isAuthenticated()) {
-            return "Success";
+            // return "Success";
+            return jwtService.generateToken(user.getUsername());
         }
         return "fail";
     }
