@@ -1,5 +1,70 @@
-# Spring-Boot Security Concepts
+# Spring-Boot Security
+This project is a full-stack application using **Spring Boot** (backend) and **React.js** (frontend) with authentication and token-based security.
 
+## 🛠️ Technologies Used
+### Backend:
+- Spring Boot
+- Spring Security (JWT Authentication)
+- MySQL (or H2 Database)
+- JPA (Hibernate)
+- Lombok
+
+### Frontend:
+- React.js
+- React Router
+- Axios
+- Bootstrap
+
+## 🚀 How to Run the Project
+
+### 🔹 Backend (Spring Boot)
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/ruturajjadhav07/SpringSecurity.git
+   cd SpringSecurity
+   ```
+2. **Configure the Database** (Update `application.properties` if needed):
+   ```properties
+   spring.datasource.url=jdbc:mysql://localhost:3306/your_database
+   spring.datasource.username=root
+   spring.datasource.password=your_password
+   ```
+3. **Build and Run the Spring Boot Application:**
+   ```sh
+   mvn clean install
+   mvn spring-boot:run
+   ```
+   The backend will be running on `http://localhost:8080`
+
+### 🔹 Frontend (React.js)
+1. **Navigate to the frontend directory:**
+   ```sh
+   cd frontend  # (Ensure you are in the correct directory)
+   ```
+2. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+3. **Start the React application:**
+   ```sh
+   npm start
+   ```
+   The frontend will be running on `http://localhost:5173`
+
+## 🔐 Authentication & Security
+- JWT (JSON Web Token) is used for authentication.
+- User needs to log in to access protected routes.
+- Token expires after 1 minute, requiring re-login.
+
+## 📄 API Endpoints
+| Method | Endpoint       | Description              |
+|--------|--------------|--------------------------|
+| POST   | `/register`  | Register a new user      |
+| POST   | `/login`     | Authenticate user & get JWT token |
+| GET    | `/users`     | Get user details (Requires Authentication) |
+
+
+# Some Concepts from codes
 ## 1. Authentication and Authorization
 - **Authentication** is the process of verifying the identity of a user (e.g., login with username and password).
 - **Authorization** determines what resources a user has access to after authentication (e.g., role-based access control).
