@@ -18,8 +18,8 @@ const SignIn = () => {
       const response = await Server.post("/login", form);
       alert("Login Successful");
   
-      const token = response.data; // Assuming backend returns JWT token
-      localStorage.setItem("token", token); // ✅ Store token
+      const token = response.data; 
+      localStorage.setItem("token", token); // Store token
       navigate("/users");
     } catch (error) {
       alert("Login Failed!");
@@ -27,7 +27,7 @@ const SignIn = () => {
   };
   
   const signup = (e) => {
-    e.preventDefault(); // Prevent unwanted submission
+    e.preventDefault();
     navigate("/signup");
   };
 

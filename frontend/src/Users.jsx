@@ -3,13 +3,13 @@ import Server from "../Server/Server";
 
 const Users = () => {
   const [data, setData] = useState([]);
-  const token = localStorage.getItem("token"); // ✅ Get token
+  const token = localStorage.getItem("token");
 
   useEffect(() => {
     const fetchUsers = async () => {
       try {
         const response = await Server.get("/users", {
-          headers: { Authorization: `Bearer ${token}` }, // ✅ Send token
+          headers: { Authorization: `Bearer ${token}` }, //  Send token
         });
         setData(response.data);
       } catch (error) {
