@@ -62,7 +62,7 @@
 ## 17. `WebAuthenticationDetailsSource`
 - A class used to build authentication details (e.g., IP address, session ID) during authentication.
 
----
+--- 
 ### For more documentation, refer to the official Spring Boot documentation:
 [Spring Boot Security Documentation](https://docs.spring.io/spring-security/site/docs/current/reference/html5/)
 
